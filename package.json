@@ -1,0 +1,17 @@
+{
+  "name": "county-cricket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "concurrently \"npm:api\" \"npm:ui\"",
+    "ui": "npm run debug --prefix ui",
+    "api": "npm run debug --prefix api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
