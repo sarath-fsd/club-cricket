@@ -1,7 +1,7 @@
 {
   "name": "county-cricket",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repo contains the API, Client to track the cricket matches in the club",
   "main": "index.js",
   "scripts": {
     "debug": "concurrently \"npm:api\" \"npm:ui\"",
@@ -13,5 +13,13 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarath-fsd/club-cricket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sarath-fsd/club-cricket/issues"
+  },
+  "homepage": "https://github.com/sarath-fsd/club-cricket#readme"
 }
