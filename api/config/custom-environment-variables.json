@@ -1,3 +1,5 @@
 {
-    "jwtPrivateKey": "club-cricket_jwtPrivateKey"
+    "jwtPrivateKey": "club-cricket_jwtPrivateKey",
+    "db": "DB_URL",
+    "port": "PORT"
   }
