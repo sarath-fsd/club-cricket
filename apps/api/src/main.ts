@@ -17,6 +17,8 @@ async function bootstrap() {
   const config = app.get(ConfigService);
 
   const db: string = config.get('db');
+  console.log(config.get('db'));
+
   mongoose.connect(db).then(() => Logger.log(`Connected to ${db}...`));
 
   const globalPrefix = 'api';
