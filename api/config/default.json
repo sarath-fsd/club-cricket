@@ -1,6 +1,0 @@
-{
-    "jwtPrivateKey": "unsecureKey",
-    "db": "mongodb://localhost:27023/club-cricket",
-    "port": "3900",
-    "requiresAuth": false
-  }
