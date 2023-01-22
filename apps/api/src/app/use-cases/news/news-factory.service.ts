@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { News } from '../../core/entities';
-import {  CreateNewsDto, UpdateNewsDto } from '../../core/dtos';
+
+import { CreateNewsDto, UpdateNewsDto } from '../../core/dtos';
+import { News } from '../../frameworks/data-services/mongo/model';
 
 @Injectable()
 export class NewsFactoryService {
@@ -9,7 +10,9 @@ export class NewsFactoryService {
     newNews.title = createNewsDto.title;
     newNews.description = createNewsDto.description;
     newNews.image = createNewsDto.image;
-    newNews.url = createNewsDto.url;
+    newNews.imageLabel = createNewsDto.imageLabel;
+    newNews.createdBy = createNewsDto.createdBy;
+    newNews.updatedBy = createNewsDto.updatedBy;
 
     return newNews;
   }
@@ -19,7 +22,8 @@ export class NewsFactoryService {
     newNews.title = updateNewsDto.title;
     newNews.description = updateNewsDto.description;
     newNews.image = updateNewsDto.image;
-    newNews.url = updateNewsDto.url;
+    newNews.imageLabel = updateNewsDto.imageLabel;
+    newNews.updatedBy = updateNewsDto.updatedBy;
 
     return newNews;
   }

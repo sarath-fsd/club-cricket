@@ -6,7 +6,7 @@ export class CreateNewsDto {
   @IsString()
   @IsNotEmpty()
   title: string;
-  
+
   @IsString()
   description: string;
 
@@ -16,8 +16,15 @@ export class CreateNewsDto {
 
   @IsString()
   @IsNotEmpty()
-  url: string;
+  imageLabel: string;
+
+  @IsString()
+  @IsNotEmpty()
+  createdBy: string;
+
+  @IsString()
+  @IsNotEmpty()
+  updatedBy: string;
 }
 
 export class UpdateNewsDto extends PartialType(CreateNewsDto) {}
-

@@ -1,5 +1,3 @@
-import { ConfigService } from '@nestjs/config';
-
 // environment
 const NODE_ENV: string = process.env.NODE_ENV || 'development';
 
@@ -9,11 +7,10 @@ const PORT: number = +process.env.PORT || 14047;
 
 // mlab
 const MLAB_USER = process.env.MLAB_USER || 'admin';
-const MLAB_PASS = process.env.MLAB_PASS || 'chnirt1803';
-const MLAB_HOST = process.env.MLAB_HOST || 'ds243055.mlab.com';
-const MLAB_PORT = +process.env.MLAB_PORT || 43055;
-const MLAB_DATABASE =
-  process.env.MLAB_DATABASE || 'nestjs-restful-best-practice';
+const MLAB_PASS = process.env.MLAB_PASS || 'jovFAzv426oLuRgU';
+const MLAB_HOST = process.env.MLAB_HOST || 'cluster0.i2cff.mongodb.net';
+const MLAB_PORT = +process.env.MLAB_PORT || 8080;
+const MLAB_DATABASE = process.env.MLAB_DATABASE || 'test';
 const MLAB_URL =
   process.env.MLAB_URL ||
   `mongodb://${MLAB_USER}:${MLAB_PASS}@${MLAB_HOST}:${MLAB_PORT}/${MLAB_DATABASE}`;

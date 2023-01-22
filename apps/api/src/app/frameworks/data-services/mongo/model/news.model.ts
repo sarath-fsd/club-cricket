@@ -10,11 +10,23 @@ export class News {
   @Prop()
   description: string;
 
-  @Prop({ required: true})
+  @Prop({ required: true })
   image: string;
 
-  @Prop({ required: true})
-  url: string;
+  @Prop({ required: true })
+  imageLabel: string;
+
+  @Prop({ required: true })
+  createdBy: string;
+
+  @Prop({ required: true, default: new Date() })
+  createdAt: Date;
+
+  @Prop({ required: true })
+  updatedBy: string;
+
+  @Prop({ required: true, default: new Date() })
+  updatedAt: Date;
 }
 
 export const NewsSchema = SchemaFactory.createForClass(News);

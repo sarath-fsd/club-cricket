@@ -1,12 +1,16 @@
 import { Controller, Get, Param, Post, Body, Put } from '@nestjs/common';
-import { CreateNewsDto, UpdateNewsDto, CreateNewsResponseDto } from '../core/dtos';
+import {
+  CreateNewsDto,
+  UpdateNewsDto,
+  CreateNewsResponseDto,
+} from '../core/dtos';
 import { NewsUseCases, NewsFactoryService } from '../use-cases/news';
 
-@Controller('api/news')
+@Controller('news')
 export class NewsController {
   constructor(
     private newsUseCases: NewsUseCases,
-    private newsFactoryService: NewsFactoryService,
+    private newsFactoryService: NewsFactoryService
   ) {}
 
   @Get()
@@ -20,11 +24,15 @@ export class NewsController {
   }
 
   @Post()
-  async createBook(@Body() newsDto: CreateNewsDto) : Promise<CreateNewsResponseDto> {
+  async createBook(
+    @Body() newsDto: CreateNewsDto
+  ): Promise<CreateNewsResponseDto> {
     const createBookResponse = new CreateNewsResponseDto();
     try {
-      const book = this.newsFactoryService.createNewNews(newsDto);
-      const createdBook = await this.newsUseCases.createNews(book);
+      console.log(JSON.stringify(newsDto, null, 2));
+      const newsPost = this.newsFactoryService.createNewNews(newsDto);
+      console.log(JSON.stringify(newsPost, null, 2));
+      const createdBook = await this.newsUseCases.createNews(newsPost);
 
       createBookResponse.success = true;
       createBookResponse.createdNews = createdBook;
@@ -39,7 +47,7 @@ export class NewsController {
   @Put(':id')
   updateNews(
     @Param('id') newsId: string,
-    @Body() updateNewsDto: UpdateNewsDto,
+    @Body() updateNewsDto: UpdateNewsDto
   ) {
     const news = this.newsFactoryService.updateNews(updateNewsDto);
     return this.newsUseCases.updateNews(newsId, news);

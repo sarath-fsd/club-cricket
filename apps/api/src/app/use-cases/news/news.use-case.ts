@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { IDataServices } from '../../core/abstracts';
-import { News } from '../../core/entities';
+import { News } from '../../frameworks/data-services/mongo/model';
 
 @Injectable()
 export class NewsUseCases {
@@ -17,6 +17,7 @@ export class NewsUseCases {
   async createNews(news: News): Promise<News> {
     try {
       // call to our dependencies
+
       const createdNews = await this.dataServices.news.create(news);
 
       return createdNews;

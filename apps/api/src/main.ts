@@ -14,21 +14,21 @@ import mongoose from 'mongoose';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const config = app.get(ConfigService);
+  /*const config = app.get(ConfigService);
 
   const db: string = config.get('db');
   console.log(config.get('db'));
 
-  mongoose.connect(db).then(() => Logger.log(`Connected to ${db}...`));
+  mongoose.connect(db).then(() => Logger.log(`Connected to ${db}...`));*/
 
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
-  const port = config.get('port');
+  const port = 3000;
   await app.listen(port);
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
   );
-  Logger.log(`Running in ${config.get('environment')} mode`);
+  //Logger.log(`Running in ${config.get('environment')} mode`);
 }
 
 bootstrap();
