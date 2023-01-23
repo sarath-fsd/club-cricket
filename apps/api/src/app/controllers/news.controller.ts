@@ -15,7 +15,17 @@ export class NewsController {
 
   @Get()
   async getAll() {
-    return this.newsUseCases.getAllNews();
+    return (await this.newsUseCases.getAllNews())
+      .sort((a, b) => {
+        if (a.updatedAt < b.updatedAt) {
+          return -1;
+        }
+        if (a.updatedAt > b.updatedAt) {
+          return 1;
+        }
+        return 0;
+      })
+      .reverse();
   }
 
   @Get(':id')

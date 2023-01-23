@@ -1,6 +1,5 @@
-import { IsString, IsNotEmpty } from 'class-validator';
 import { PartialType } from '@nestjs/mapped-types';
-import { ObjectId } from 'mongoose';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateNewsDto {
   @IsString()

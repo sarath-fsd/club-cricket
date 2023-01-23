@@ -1,4 +1,4 @@
-import { News } from '../entities';
+import { News } from '../../frameworks/data-services/mongo/model';
 
 export class CreateNewsResponseDto {
   success: boolean;
